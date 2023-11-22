@@ -10,7 +10,7 @@
     <section>
         <fieldset>
             <legend>Validação</legend>
-            <form name="form1">
+            <form name="form1" action="pagina2.html">
                 <div class="linha">
                     <label for="nome">Nome</label>
                     <input type="text" id="idNome" name="nome">
@@ -35,6 +35,7 @@
     <script>
     function verificar(){
     var enviar = true;
+
     const nome = document.getElementById("idNome");
     if (nome.value.length == 0){
         nome.style.backgroundColor = "black";

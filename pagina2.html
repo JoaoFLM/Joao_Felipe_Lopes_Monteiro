@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina 2</title>
+</head>
+<body>
+    <section><p id="1">Numeros: </p></section>
+    <input type="button" value="Contar" onclick="escrever()">
+    <script>
+        function escrever(){
+            const escrever = document.getElementById("1");
+            var contador = 0;
+            var coisas = ["sapato", "aviao", "bolacha", "cavalo", "poste", "energia", "sol"];
+            for(i = 1; i <= 30; i++)
+            {
+                escrever.textContent += i + " ";} 
+            }
+    </script>
+</body>
+</html>
