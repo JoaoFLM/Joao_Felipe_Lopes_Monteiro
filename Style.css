@@ -38,8 +38,12 @@ form{
     color: #fff;
     border: none;
     cursor: pointer;
-    background-color: rgb(19, 12, 101);
+    background-color: rgb(40, 25, 204);
     margin-right: 7px;
+}
+
+.botao input:hover{
+    background-color: rgb(18, 11, 95);
 }
 
 

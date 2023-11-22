@@ -12,15 +12,18 @@
             <form name="form1">
                 <div class="linha">
                     <label for="nome">Nome</label>
-                    <input type="text" id="idName" name="nome">
+                    <input type="text" id="idNome" name="nome">
+                    
                 </div>
                 <div class="linha">
                     <label for="idade">Idade</label>
-                    <input type="text" name="idade" id="idade">
+                    <input type="text" name="idIdade" id="idade">
+                 
                 </div>
                 <div class="linha">
                     <label for="email">Email</label>
-                    <input type="email" name="email" id="email">
+                    <input type="email" name="idEmail" id="email">
+                   
                 </div>
                 <div class="botao">
                     <input type="button" value="Gravar" onclick="verificar()">
@@ -28,6 +31,42 @@
             </form>
         </fieldset>
     </section>
-    <script href="Script.js"></script>
+    <script>
+        function verificar(){
+    const nome = document.getElementById("idNome");
+    var enviar = true;
+    if (nome.value.length == 0){
+        nome.style.backgroundColor = "black";
+        nome.style.color = "red";
+        enviar = false;
+        opcaoInvalida("Opcao invalida", idade);
+    }
+
+    const idade = document.getElementById("idIdade");
+    if(isNaN(idade.value) || idade.value.length == 0){
+        idade.style.backgroundColor = "black";
+        idade.style.color = "red";
+        enviar = false;
+        opcaoInvalida("Opcao invalida", idade);
+    }
+
+    const email = document.getElementById("idEmail");
+    if(email.value.indexOf("@") < 0 || email.value.indexOf(".") < 0){
+        email.style.backgroundColor = "black";
+        email.style.color = "red";
+        enviar = false;
+        opcaoInvalida("Opcao invalida", email);
+    }
+
+    if(enviar){
+        document.form1.submit();
+    }
+
+    }
+
+    function opcaoinvalida(msg, tag){
+        tag.TextContent = msg;
+    }
+    </script>
 </body>
 </html>
