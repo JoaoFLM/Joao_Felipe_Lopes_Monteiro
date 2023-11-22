@@ -41,8 +41,11 @@
         nome.style.color = "red";
         document.getElementById("erroNome").textContent = "preencha o nome corretamente";
         enviar = false;
-        
-    }
+        } else {
+            nome.style.backgroundColor = "";
+            nome.style.color = "";
+            document.getElementById("erroNome").textContent = "";
+        }
 
     const idade = document.getElementById("idIdade");
     if(isNaN(idade.value) || idade.value.length == 0){
@@ -50,8 +53,11 @@
         idade.style.color = "red";
         document.getElementById("erroIdade").textContent = "preencha a idade corretamente";
         enviar = false;
-        
-    }
+        } else {
+            nome.style.backgroundColor = "";
+            nome.style.color = "";
+            document.getElementById("erroIdade").textContent = "";
+        }
 
     const email = document.getElementById("idEmail");
     if(email.value.indexOf("@") < 0 || email.value.indexOf(".") < 0){
@@ -59,7 +65,10 @@
         email.style.color = "red";
         document.getElementById("erroEmail").textContent = "preencha o email corretamente";
         enviar = false;
-        
+        } else {
+            nome.style.backgroundColor = "";
+            nome.style.color = "";
+            document.getElementById("erroEmail").textContent = "";
     }
 
     if(enviar){
