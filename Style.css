@@ -1,6 +1,8 @@
 html{
     height: 100%;
     box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 13px;
 }
 
 body{
@@ -9,18 +11,37 @@ body{
 }
 
 section{
+
     background-color: white;
-    padding: 100px;
-    margin: 100px
-    
+    display: flexbox;
+    width: 60%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
 }
 
-.agenda-cabeca{
-    background-color: black;
-    padding: 10px;
-    display: flex;
-    float: left;
+fieldset{
+    padding: 50px;
 }
+
+form{
+    display: flexbox;
+    padding: 20px;
+}
+
+
+
+.botao input{
+    float: right;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    background-color: rgb(19, 12, 101);
+    margin-right: 7px;
+}
+
 
 
 

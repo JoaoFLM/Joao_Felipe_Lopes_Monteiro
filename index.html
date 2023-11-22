@@ -10,13 +10,21 @@
     <section>
         <fieldset>
             <form>
-                <label for="nome">Nome</label>
-                <input type="text" id="idName" name="nome">
-                <label for="idade">Idade</label>
-                <input type="number" name="email" id="idade">
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email">
-                <input type="button" value="Gravar" onclick="verificar()">
+                <div class="linha">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="idName" name="nome">
+                </div>
+                <div class="linha">
+                    <label for="idade">Idade</label>
+                    <input type="text" name="idade" id="idade">
+                </div>
+                <div class="linha">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email">
+                </div>
+                <div class="botao">
+                    <input type="button" value="Gravar" onclick="verificar()">
+                </div>
             </form>
         </fieldset>
     </section>
