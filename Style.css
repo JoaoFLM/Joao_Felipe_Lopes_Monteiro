@@ -1,0 +1,29 @@
+html{
+    height: 100%;
+    box-sizing: border-box;
+}
+
+body{
+    align-items: center;
+    background: linear-gradient(320deg, red, purple, blue);
+}
+
+section{
+    background-color: white;
+    padding: 100px;
+    margin: 100px
+    
+}
+
+.agenda-cabeca{
+    background-color: black;
+    padding: 10px;
+    display: flex;
+    float: left;
+}
+
+
+
+
+
+
