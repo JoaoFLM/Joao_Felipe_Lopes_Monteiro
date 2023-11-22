@@ -9,22 +9,23 @@
 <body>
     <section>
         <fieldset>
+            <legend>Validação</legend>
             <form name="form1">
                 <div class="linha">
                     <label for="nome">Nome</label>
                     <input type="text" id="idNome" name="nome">
-                    
+                    <span id="erroNome"></span>
                 </div>
                 <div class="linha">
                     <label for="idade">Idade</label>
-                    <input type="text" name="idIdade" id="idade">
-                 
+                    <input type="text" id="idIdade" name="idade">
+                    <span id="erroIdade"></span>
                 </div>
                 <div class="linha">
                     <label for="email">Email</label>
-                    <input type="email" name="idEmail" id="email">
-                   
-                </div>
+                    <input type="email" id="idEmail" name="email">
+                    <span id="erroEmail"></span>
+                </div>  
                 <div class="botao">
                     <input type="button" value="Gravar" onclick="verificar()">
                 </div>
@@ -32,30 +33,33 @@
         </fieldset>
     </section>
     <script>
-        function verificar(){
-    const nome = document.getElementById("idNome");
+    function verificar(){
     var enviar = true;
+    const nome = document.getElementById("idNome");
     if (nome.value.length == 0){
         nome.style.backgroundColor = "black";
         nome.style.color = "red";
+        document.getElementById("erroNome").textContent = "preencha o nome corretamente";
         enviar = false;
-        opcaoInvalida("Opcao invalida", idade);
+        
     }
 
     const idade = document.getElementById("idIdade");
     if(isNaN(idade.value) || idade.value.length == 0){
         idade.style.backgroundColor = "black";
         idade.style.color = "red";
+        document.getElementById("erroIdade").textContent = "preencha a idade corretamente";
         enviar = false;
-        opcaoInvalida("Opcao invalida", idade);
+        
     }
 
     const email = document.getElementById("idEmail");
     if(email.value.indexOf("@") < 0 || email.value.indexOf(".") < 0){
         email.style.backgroundColor = "black";
         email.style.color = "red";
+        document.getElementById("erroEmail").textContent = "preencha o email corretamente";
         enviar = false;
-        opcaoInvalida("Opcao invalida", email);
+        
     }
 
     if(enviar){
@@ -64,9 +68,6 @@
 
     }
 
-    function opcaoinvalida(msg, tag){
-        tag.TextContent = msg;
-    }
     </script>
 </body>
 </html>
