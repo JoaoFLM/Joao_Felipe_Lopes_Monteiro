@@ -5,15 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Validação</title>
    <link rel="stylesheet" href="Style.css">
-   <!-- Foi feito um script em JavaSript que valida se as informações que foram inseridas estão corretas,
-     e em após isso envia o usuario para outra página,
-     essa página possui uma estrtura de repetição que conta do número 1 ao 30 e o mostra na tela-->
+   <!-- Foi feito um script em JavaSript que valida se as informações que foram inseridas estão corretas, caso estejam erradas o campo fica vermelho e monstra uma mensagem de erro -->
 </head>
 <body>
     <section>
         <fieldset>
             <legend>Validação</legend>
-            <form name="form1" action="pagina2.html">
+            <form name="form1">
                 <div class="linha">
                     <label for="nome">Nome</label>
                     <input type="text" id="idNome" name="nome">
@@ -37,49 +35,31 @@
     </section>
     <script>
     function verificar(){
+    const nomeCampo = ["Nome", "Idade", "Email"];
+    const campo = [document.getElementById("idNome"), document.getElementById("idIdade"), document.getElementById("idEmail")];
     var enviar = true;
 
-    const nome = document.getElementById("idNome");
-    if (nome.value.length == 0){
-        nome.style.backgroundColor = "black";
-        nome.style.color = "red";
-        document.getElementById("erroNome").textContent = "preencha o nome corretamente";
-        enviar = false;
+    for(i = 0; i < nomeCampo.length; i++)
+    {
+        if((campo[i].value.length == 0) || (isNaN(campo[1].value)) || (campo[2].value.indexOf("@") < 0 || campo[2].value.indexOf(".") < 0))
+        {
+            campo[i].style.backgroundColor = "black";
+            campo[i].style.color = "red";
+            document.getElementById("erro" + nomeCampo[i]).textContent = "preencha o campo " + nomeCampo[i] + " corretamente";
+            enviar = false;
         } else {
-            nome.style.backgroundColor = "";
-            nome.style.color = "";
-            document.getElementById("erroNome").textContent = "";
+            campo[i].style.backgroundColor = "";
+            campo[i].style.color = "";
+            document.getElementById("erro" + nomeCampo[i]).textContent = "";
         }
-
-    const idade = document.getElementById("idIdade");
-    if(isNaN(idade.value) || idade.value.length == 0){
-        idade.style.backgroundColor = "black";
-        idade.style.color = "red";
-        document.getElementById("erroIdade").textContent = "preencha a idade corretamente";
-        enviar = false;
-        } else {
-            nome.style.backgroundColor = "";
-            nome.style.color = "";
-            document.getElementById("erroIdade").textContent = "";
         }
-
-    const email = document.getElementById("idEmail");
-    if(email.value.indexOf("@") < 0 || email.value.indexOf(".") < 0){
-        email.style.backgroundColor = "black";
-        email.style.color = "red";
-        document.getElementById("erroEmail").textContent = "preencha o email corretamente";
-        enviar = false;
-        } else {
-            nome.style.backgroundColor = "";
-            nome.style.color = "";
-            document.getElementById("erroEmail").textContent = "";
     }
+    
 
     if(enviar){
         document.form1.submit();
     }
 
-    }
 
     </script>
 </body>
